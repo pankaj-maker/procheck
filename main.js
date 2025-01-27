@@ -26,6 +26,9 @@ function readCsv(file) {
 }
 
 function writeCsv(path,data) {
+    const first =data[0];
+    first ["Errors"]="No such errror"
+    data[0]=first;
     const stringify=Papa.unparse(data);
   fs.writeFileSync(path, stringify);
 }
