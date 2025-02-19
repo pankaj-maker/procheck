@@ -7,7 +7,15 @@
   "scripts": {
     "dev": "node --env-file=.env --watch main.js --input=companies.csv --clean=clean_data.csv --report=report.csv"
   },
-  "keywords": [],
+  "keywords": [
+    "csv",
+    "validation",
+    "data-cleaning",
+    "csv-validator",
+    "data-validation",
+    "nodejs",
+    "npm-package"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
