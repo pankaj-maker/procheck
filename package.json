@@ -1,6 +1,7 @@
 {
-  "name": "leadsync",
-  "version": "1.0.0",
+  "name": "procheck",
+  "version": "1.0.1",
+  "type": "module",
   "description": "",
   "main": "main.js",
   "scripts": {

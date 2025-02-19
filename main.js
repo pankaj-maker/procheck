@@ -1,10 +1,11 @@
-const fs = require("fs");
-const Papa = require("papaparse");
+import { readFileSync, writeFileSync } from "fs";
+import  Papa from "papaparse";
+import { isEmail } from "./lib/validate.js";
 
 // const { parse } = require("csv-parse/sync");
 
-const yargs = require("yargs/yargs");
-const { hideBin } = require("yargs/helpers");
+import yargs from "yargs/yargs";
+import { hideBin } from "yargs/helpers";
 const argv = yargs(hideBin(process.argv)).argv;
 
 const inputFile = argv.input;
@@ -16,7 +17,7 @@ const reportFile = argv.report;
 
 
 function readCsv(file) {
-  const fileContent = fs.readFileSync(inputFile, "utf8");
+  const fileContent = readFileSync(inputFile, "utf8");
   const records = Papa.parse(fileContent,{
     header: true,
   });
@@ -30,6 +31,6 @@ function writeCsv(path,data) {
     first ["Errors"]="No such errror"
     data[0]=first;
     const stringify=Papa.unparse(data);
-  fs.writeFileSync(path, stringify);
+  writeFileSync(path, stringify);
 }
 writeCsv(outputFile,readCsv(inputFile).body);
